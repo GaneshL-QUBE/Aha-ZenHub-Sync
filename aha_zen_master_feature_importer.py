@@ -193,8 +193,9 @@ def main():
 
     for items in Zen_Epics['epic_issues']:
         #check if item is available in Endurance:
-        logger.info('processing: '+str(items))
-        aha_epic=getTranslationData(ENDURANCE,str(items['issue_number']))
+        print('processing: '+str(items))
+        #aha_epic=getTranslationData(ENDURANCE,str(items['issue_number']))
+        aha_epic = None
         if(aha_epic==None):
             issue=git_repo.issue(items['issue_number'])
             try:
@@ -214,7 +215,8 @@ def main():
             try:
                 status=getTranslationData(json.load(open('zen2ahaMap.json')),zen_issue_detail['pipeline']['name'])            
             except:
-                status=None
+                status="Backlog"
+
             if(status is not None):
                 response=insertMasterFeatureAha(release_id,name,description,status, due_date=due_date)
                 if(response.status_code==200):
