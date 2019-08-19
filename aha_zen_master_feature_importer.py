@@ -187,6 +187,9 @@ def main():
     global ZH_ISSUE_RELEASE_MAP
     ZH_ISSUE_RELEASE_MAP=build_Release_Map_ZH()
 
+    translationJSON = json.load(open('zen2ahaMap.json'))
+    print("Translation JSON" + str(translationJSON))
+
     for items in Zen_Epics['epic_issues']:
         #check if item is available in Endurance:
         logger.info('processing: '+str(items))
@@ -224,7 +227,7 @@ def main():
                     logger.info(response.status_code)
             else:
                 #TODO Log error for status not available
-                print(' status un available')
+                print(' status un available:' + status)
                 pass
         else:
             #TODO Logic for updating the Master feature
@@ -234,9 +237,12 @@ def main():
             changes={}
             G_name=issue.title
             G_description=issue.body
+            
             try:
-                Z_status=getTranslationData(json.load(open('zen2ahaMap.json')),zen_issue_detail['pipeline']['name'])
+                print("State 1:"+ zen_issue_detail)
+                Z_status=getTranslationData(translationJSON,zen_issue_detail['pipeline']['name'])
             except:
+                print("State 2:"+issue.state)
                 if('pipeline' not in zen_issue_detail and issue.state =='closed'):
                     Z_status=getTranslationData(json.load(open('zen2ahaMap.json')),issue.state)
                 else:
