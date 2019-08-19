@@ -49,7 +49,7 @@ def getReleasesfromAha(page=1):
     return data
 
 #Create a Release on Aha!
-def createReleaseOnAha( name , release_date, workflow_status,owner="aarthi.videep@qubecinema.com" ):
+def createReleaseOnAha( name , release_date, workflow_status,owner=config.Owner):
     url=urljoin(config.Aha_Domain,'/api/v1/products/{product_id}/releases'.format(product_id=config.product_id))
     data={
         "release":{
