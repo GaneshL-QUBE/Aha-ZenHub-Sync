@@ -227,7 +227,7 @@ def main():
                     logger.info(response.status_code)
             else:
                 #TODO Log error for status not available
-                print(' status un available:' + status)
+                print(' status is null for zenhub issue:'+str(zen_issue_detail))
                 pass
         else:
             #TODO Logic for updating the Master feature
