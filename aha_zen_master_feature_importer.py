@@ -211,13 +211,13 @@ def main():
                 due_date=None
             zen_issue_detail=getIssueDetailFromZen(repoid=config.Zenhub_repo_Id,issue_id=items['issue_number'])
             name=issue.title
-            description=issue.body
+            description=issue.body + "[Zenhub_Link:https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/"+items['issue_number']
             try:
                 status=getTranslationData(json.load(open('zen2ahaMap.json')),zen_issue_detail['pipeline']['name'])            
             except:
                 status="Backlog"
 
-            if(status is not None):
+            if(status is not "Released"):
                 response=insertMasterFeatureAha(release_id,name,description,status, due_date=due_date)
                 if(response.status_code==200):
                     this_master_feature=response.json()
@@ -230,7 +230,7 @@ def main():
                     logger.info(response.status_code)
             else:
                 #TODO Log error for status not available
-                print(' status is null for zenhub issue:'+str(zen_issue_detail))
+                print(' status is Released for zenhub issue:'+str(zen_issue_detail))
                 pass
         else:
             #TODO Logic for updating the Master feature
