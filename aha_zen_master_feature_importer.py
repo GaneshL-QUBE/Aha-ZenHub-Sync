@@ -100,7 +100,7 @@ def getIssueDetailFromZen(repoid,issue_id):
         return result
     else:
         #Log error
-        print ("Error getting zenhub issue or id:"+issue_id +" from repoid: "+repoid)
+        print ("Error getting zenhub issue or id:"+str(issue_id) +" from repoid: "+str(repoid))
         return None
 
 # Get list of available release milestones from Aha
