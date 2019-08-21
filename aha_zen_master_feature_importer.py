@@ -57,7 +57,7 @@ def build_Release_Map_ZH():
         issues=get_issues_under_releaseID_ZH(rl['release_id'])
 
         if issues is None:
-            return {}
+            continue
 
         for issue in issues:
             if(str(issue['repo_id'])==config.Zenhub_repo_Id):
