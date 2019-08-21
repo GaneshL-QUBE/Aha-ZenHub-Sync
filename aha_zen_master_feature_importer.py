@@ -211,7 +211,7 @@ def main():
                 due_date=None
             zen_issue_detail=getIssueDetailFromZen(repoid=config.Zenhub_repo_Id,issue_id=items['issue_number'])
             name=issue.title
-            description=issue.body + "[Zenhub_Link:https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/"+items['issue_number']
+            description=issue.body + "[Zenhub_Link:https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/"+str(items['issue_number'])
             try:
                 status=getTranslationData(json.load(open('zen2ahaMap.json')),zen_issue_detail['pipeline']['name'])            
             except:
