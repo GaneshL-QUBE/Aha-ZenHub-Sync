@@ -191,6 +191,7 @@ def main():
     except Exception as e:
         print(str(e))
     finally:
+        print("Finished syncing releases")
         #requests.post(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}, json= endurance)
 
 
