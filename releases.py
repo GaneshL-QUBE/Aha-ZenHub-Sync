@@ -158,6 +158,7 @@ def main():
     Releases_in_Aha = getReleasesfromAha()
     
     try:
+        endurance = None
         for release in Releases_in_Zenhub:
             if(getTranslationData(endurance,release['release_id']) is None and release['title'] not in json.dumps(Releases_in_Aha) ): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
                 release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
@@ -190,8 +191,7 @@ def main():
     except Exception as e:
         print(str(e))
     finally:
-        requests.post(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}, json= endurance)
-
+        #requests.post(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}, json= endurance)
 
 
 
