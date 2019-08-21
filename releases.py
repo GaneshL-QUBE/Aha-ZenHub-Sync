@@ -160,7 +160,7 @@ def main():
     try:
         endurance = None
         for release in Releases_in_Zenhub:
-            if(getTranslationData(endurance,release['release_id']) is None and release['title'] not in json.dumps(Releases_in_Aha) ): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
+            if(endurance is None): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
                 release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
                 status=release['state']
                 if(status=='open'):
