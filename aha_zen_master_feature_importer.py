@@ -53,10 +53,9 @@ def build_Release_Map_ZH():
     ZH_Releases= releases.getReleasesFromZenhub(config.Zenhub_repo_Id)
     Issue_Release_Map={}
     for rl in ZH_Releases:
-        print("Getting issues under release" +str(rl))
         issues=get_issues_under_releaseID_ZH(rl['release_id'])
-
         if issues is None:
+            print("Getting issues under release" +str(rl))
             continue
 
         for issue in issues:

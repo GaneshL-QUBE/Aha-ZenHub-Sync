@@ -144,10 +144,8 @@ def add_Release_Templates(response):
 
 
 
-def main(config_selector):
-    config= json.loads(os.environ.get(config_selector))
-    os.environ['config']= os.environ.get(config_selector)
-    print("Configuration loaded: " +os.environ['config'])
+def main():
+    config= json.loads(os.environ.get('config'))
     config=Objectifier(config)
 
     Releases_in_Zenhub=getReleasesFromZenhub(config.Zenhub_repo_Id)
