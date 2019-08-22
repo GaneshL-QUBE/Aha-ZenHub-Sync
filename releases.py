@@ -1,22 +1,33 @@
 import requests
 from urllib.parse import urljoin
 import json
-import os
+import sys,os
 from objectifier import Objectifier
 import logging
 import release_templates
+from configuration import getConfiguration
+import aha_zen_master_feature_importer as azf
+
+config = getConfiguration()
 
 AHA_TOKEN=config.AHA_TOKEN
 ZENHUB_TOKEN=config.ZENHUB_TOKEN
 AHA_HEADER={'Authorization':AHA_TOKEN,'Content-Type': "application/json","User-Agent":"praveentechnic@gmail.com"}
 ZENHUB_HEADER={'X-Authentication-Token':ZENHUB_TOKEN}
 GITHUB_TOKEN=config.GITHUB_TOKEN
+global aha_releases_names
+global aha_releases_name_map 
+global Releases_in_Aha 
+global Releases_in_Zenhub 
 
 logging.basicConfig(level=logging.INFO,
  format="%(levelname)s:%(filename)s,%(lineno)d:%(name)s.%(funcName)s:%(message)s", 
   handlers=[logging.StreamHandler()])
 logger=logging.getLogger()
 
+#logging.getLogger('github3').setLevel(logging.DEBUG)
+git_repo=azf.github_object(azf.GITHUB_TOKEN,config.repo_name)
+logger.info("Created git_repo object")
 
 
 #Get all the releases from Zenhub
@@ -27,23 +38,13 @@ def getReleasesFromZenhub(repoid):
     if(rs.status_code==200):
         return rs.json()
     else:
-        return None
+        logger.error("Error in getting Zenhub releases : {0}".format(rs.json()))
 
 #Get All Releases from Aha!
 
-def getReleasesfromAha(page=1):
-    data={"releases":[]}
-    url=urljoin(config.Aha_Domain,'/api/v1/products/{product_id}/releases'.format(product_id=config.product_id))
-    rs= requests.get(url, headers=AHA_HEADER,params={"page":page})
-    if(rs.status_code==200):
-        data["releases"]=data["releases"]+rs.json()['releases']
-        currentpage=rs.json()['pagination']['current_page']
-        total_pages=rs.json()['pagination']['total_pages']
-        if(total_pages!=currentpage):
-            data["releases"]=data["releases"]+getReleasesfromAha(page=currentpage+1)['releases']
-    else:
-        return None
-    return data
+
+
+
 
 #Create a Release on Aha!
 def createReleaseOnAha( name , release_date, workflow_status,owner="dhanya@qubecinema.com"):
@@ -121,14 +122,14 @@ def getTranslationData(jsoncontent,key):
     try:
         return jsoncontent[key]
     except KeyError:
-        logging.error("The requested translation data {0} is not found on the map".format(key))
+        logging.error("The requested translation data '{0}' is not found on the map".format(key))
         return None
 
 def create_release_phase(data):
     url=urljoin(config.Aha_Domain,'/api/v1/release_phases')
     rs= requests.post(url, headers=AHA_HEADER , json = data)
     if(rs.status_code==200):
-        logger.info("Created Release phase ")
+        #logger.info("Created Release phase for")
         return rs.json()
     else:
         return None
@@ -142,52 +143,276 @@ def add_Release_Templates(response):
     for items in template:
         create_release_phase(items)
 
+def deleteAhaRelease(release):
+    ID = release['id']
+    url = urljoin(config.Aha_Domain, '/api/v1/products/{product_id}/releases/{id}'.format(product_id=config.product_id,id=ID))
+    rs = requests.delete(url, headers=AHA_HEADER)
+    if (rs.status_code == 204):
+        logger.info("Release deleted successfully {0}".format(release['name']))
+    else:
+        logger.error("Release deletion failed for  {0} with response {1}".format(release['name'], rs.json()))
 
 
-def main(config_selector):
-    config= json.loads(os.environ.get(config_selector))
-    os.environ['config']= os.environ.get(config_selector)
-    print("Configuration loaded: " +os.environ['config'])
-    config=Objectifier(config)
+def fillAhaReleaseNames():
+    global Releases_in_Aha
+    global aha_releases_name_map
+    global aha_releases_names
 
-    Releases_in_Zenhub=getReleasesFromZenhub(config.Zenhub_repo_Id)
-    Releases_in_Aha = getReleasesfromAha()
-
-    aha_releases_names = []
-    for release in Releases_in_Aha:
+    for release in Releases_in_Aha['releases']:
+        #print("Release here:"+str(release['name']))
+        aha_releases_name_map[release['name']] = release['id']
         aha_releases_names.append(release['name'])
-    
-    print("Releases in Zenhub"+str(Releases_in_Zenhub))
-    print("Releases in Aha"+str(Releases_in_Aha))
 
+
+def createNewReleaseForAha(name, release):
+    logger.info("Inserting following Release to Aha" + name)
+    release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
+    status=release['state']
+    if(status=='open'):
+        status='Backlog'
+    if(status=='closed'):
+        status='Released'
+    creation=createReleaseOnAha(name=name, release_date = release_date_to_be_updated_to_AHA, workflow_status=status)
+    if('state' not in creation.keys()):
+        add_Release_Templates(creation)
+        print("Created new Release on Aha! {0}".format(creation['release']['reference_num']))
+        #endurance[release['release_id']]={"aha_ref_num":creation['release']['reference_num'], "aha_release_id": creation['release']['id']}
+        aha_releases_names.append(name)
+        aha_releases_name_map[name] = creation['release']['id']
+
+def exceptionHandler(data):
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    logger.error("{0} {1} {2} {3}".format(data, exc_type, fname, exc_tb.tb_lineno))
+
+#Get all issues for release
+def getAllIssuesForRelease(release):
+    url = urljoin(config.Zenhub_Domain, '/p1/reports/release/{release_id}/issues'.format(release_id=release['release_id']))
+    rs = requests.get(url, headers=ZENHUB_HEADER)
+    if (rs.status_code == 200):
+        result = rs.json()
+        return result
+    else:
+        loggger.ERROR("Error getting all issues for a zenhub release {0}".format(release['title']))
+
+#Get Details of an issue from Zenhub
+def getIssueDetailFromZen(issue_id):
+    rs= requests.get(url= urljoin(config.Zenhub_Domain,'/p1/repositories/{0}/issues/{1}'.format(str(config.Zenhub_repo_Id),str(issue_id))),headers=ZENHUB_HEADER)
+    if(rs.status_code==200):
+        result= rs.json()
+        result['id']=issue_id
+        return result
+    else:
+        #Log error
+        logger.error("Error getting zenhub issue or id:{0}".format(issue_id))
+        return None
+
+def getAllMasterFeaturesFromAha(page=1):
+    data = []
+    url = urljoin(config.Aha_Domain, '/api/v1/products/{product_id}/master_features'.format(product_id=config.product_id))
+    rs = requests.get(url, headers=AHA_HEADER,params={"page":page})
+    if (rs.status_code == 200):
+        data += rs.json()['master_features']
+        currentpage=rs.json()['pagination']['current_page']
+        total_pages=rs.json()['pagination']['total_pages']
+        if(total_pages>currentpage):
+            data += getAllMasterFeaturesFromAha(page=currentpage+1)
+        return data
+    else:
+        logger.error("Error getting all the master features from AHA")
+        raise NotImplementedError("Cannot handle without purge")
+
+
+def deleteAhaMasterFeature(master_feature):
+    ID = master_feature['id']
+    url = urljoin(config.Aha_Domain, '/api/v1/master_features/{id}'.format(id=ID))
+    rs = requests.delete(url, headers=AHA_HEADER)
+    if (rs.status_code == 204):
+        logger.info("Master Feature deleted successfully {0}".format(master_feature['name']))
+    else:
+        logger.error("Master Feature deletion failed for  {0} with response {1}".format(master_feature['name'], rs.json()))
+
+def main():
+    global aha_releases_names
+    global aha_releases_name_map
+    global Releases_in_Aha 
+    global Releases_in_Zenhub 
+
+    Releases_in_Zenhub= getReleasesFromZenhub(config.Zenhub_repo_Id)
+    Releases_in_Aha= getReleasesfromAha()
+    
+    #print("Releases in Zenhub"+str(Releases_in_Zenhub))
+    #print("Releases in Aha"+str(Releases_in_Aha))
+
+    #Purging Existing Releases
+    if (config.purgeEntries):
+        master_features = getAllMasterFeaturesFromAha()
+        logger.info("Master Features Found : {0}".format(len(master_features)))
+        for master_feature in master_features:
+            deleteAhaMasterFeature(master_feature)
+
+        print("Purging Existing releases in Aha {0}".format(len(Releases_in_Aha['releases'])))
+        for release in Releases_in_Aha['releases']:
+            deleteAhaRelease(release)
+        Releases_in_Aha= getReleasesfromAha() #Get the fresh list from Aha Again
+
+       
+
+     
+    aha_releases_names = []
+    aha_releases_name_map = {}
+    fillAhaReleaseNames()
+
+    print("Aha Release Names Before Sync:"+str(aha_releases_names))
     try:
-        endurance = None
         for release in Releases_in_Zenhub:
-            if(release["name"] not in aha_releases_names): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
-                print("Zenhub release not found in Aha:" + release["name"])
-                continue
-                # release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
-                # status=release['state']
-                # if(status=='open'):
-                #     status='Backlog'
-                # if(status=='closed'):
-                #     status='Released'
-                # creation=createReleaseOnAha(name=release['title'], release_date = release_date_to_be_updated_to_AHA, workflow_status=status)
-                # if('state' not in creation.keys()):
-                #     add_Release_Templates(creation)
-                #     print("Created new Release on Aha! {0}".format(creation['release']['reference_num']))
-                #     endurance[release['release_id']]={"aha_ref_num":creation['release']['reference_num'], "aha_release_id": creation['release']['id']}
-                # else:
-                #     print("Error while Creating Release on Aha! : {0}".format(str(creation)))
+            
+            name = release['title']
+            if(name not in aha_releases_names): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
+                try:
+                    createNewReleaseForAha(name, release)
+                    
+                except Exception as e:
+                    exceptionHandler("Error in creating Release {0} as exception {1}".format(name, e))    
                 
             else:# data is available, so we will check for updates
-                print("Zenhub release found in Aha:" + release["name"])
+                print("Zenhub release found in Aha:" + name)
 
     except Exception as e:
-        print("Exception Occurred here:"+str(e))
+        exceptionHandler("Release Syncer Exception")
     finally:
-        print("Finished syncing releases")
-        #requests.post(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}, json= endurance)
+        #This will update the final result for all further processing.
+        Releases_in_Aha = getReleasesfromAha()
+        fillAhaReleaseNames()
+
+    syncEpicsFromZenToAha()
+
+
+#Create a new master feature on Aha
+def insertMasterFeatureAha(zenhub_issue, zehub_issue_number, aha_release_id):    
+    
+    issue = git_repo.issue(zehub_issue_number)
+
+    #TODO: Make this better. 
+    name=issue.title
+    description=issue.body + "[Zenhub_Link:https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/"+str(zehub_issue_number)+"]"
+    
+    status=getTranslationData(json.load(open('zen2ahaMap.json')),zenhub_issue['pipeline']['name'])            
+    
+    if(status is None):
+        logger.warn("The following issue {0} was not synced because of status {1}".format(zehub_issue_number, status))
+        return None
+        
+
+    model={
+  "master_feature": {
+    "name": name,
+    "description": description,    
+    "workflow_status": {            
+            "name": status
+        }
+            }
+            }
+
+    rs=requests.post(url= urljoin(config.Aha_Domain ,'api/v1/releases/{release_id}/master_features'.format(release_id=aha_release_id)),data=json.dumps(model), headers=AHA_HEADER)
+
+    if (rs.status_code == 200):
+        return rs.json
+    else:
+        logger.error("Error in creating master feature in aha : {0}".format(rs.json))
+        return None
+
+
+def syncEpicsFromZenToAha():
+    try:
+        for zenHubRelease in Releases_in_Zenhub:
+            try:
+                
+                if (zenHubRelease['title'] not in aha_releases_names):
+                    logger.error("Not Syncing any issues in this release: {0}".format(zenHubRelease['title']))
+                    continue
+
+                aha_release_id = aha_releases_name_map[zenHubRelease['title']]
+                issues = getAllIssuesForRelease(zenHubRelease)
+                logger.info("Issues {0} for release {1}".format(issues, zenHubRelease['title']))
+                for issue in issues:
+
+                    try:
+                        zenhub_issue = getIssueDetailFromZen(issue_id=issue['issue_number'])
+                    
+                        if (zenhub_issue["is_epic"]):
+                            
+                            response=insertMasterFeatureAha(zenhub_issue, issue['issue_number'], aha_release_id)
+                            #syncStoriesFromZenToAha(issue['issue_number'], response)
+                            logger.info("zenhub issue : {0}".format(zenhub_issue))
+                        else:
+                            #reponse=insertStoryToAha(issue['issue_number'], aha_release_id)
+                            continue
+
+                    except Exception as identifier:
+                        exceptionHandler("Error in syncing epic {0} with following exception {1} ".format(issue['issue_number'], identifier))
+                   
+                    
+                    #TODO: See if it is already present in Aha.
+                    
+            except Exception as identifier:
+                exceptionHandler("Error in syncing Release {0} with following exception {1} ".format(zenHubRelease['title'], identifier))
+
+    except Exception as identifier:
+        exceptionHandler("Exception in syncing Issues {0}".format(identifier))
+    finally:
+        pass
+
+#Get Details of an issue from Zenhub
+def getAllIssuesForEpic(issue_id):
+    rs= requests.get(url= urljoin(config.Zenhub_Domain,'/p1/repositories/{0}/epics/{1}'.format(str(config.Zenhub_repo_Id),str(issue_id))),headers=ZENHUB_HEADER)
+    if(rs.status_code==200):
+        result= rs.json()
+        return result['issues']
+    else:
+        #Log error
+        logger.error("Error getting zenhub issue or id:{0}".format(issue_id))
+        return None
+
+#Create an aha story for the github issue
+def createStoryInAha(issue, zenhubEpicId, ahaEpicId):    
+    name=issue.title
+    description=issue.body + "[Zenhub_Link:https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/"+str(zehub_issue_number)
+    try:
+        status=getTranslationData(json.load(open('zen2ahaMap.json')),zenhub_issue['pipeline']['name'])            
+    except:
+        status="Backlog"
+
+    if(status is "Released"):
+        return None
+        
+
+    model={
+  "feature": {
+    "name": name,
+    "description": description,
+    "master_feature": ahaEpicId,    
+    "workflow_status": {            
+            "name": status
+        }
+            }
+            }
+
+    rs=requests.post(url= urljoin(config.Aha_Domain ,'api/v1/releases/{release_id}/master_features'.format(release_id=aha_release_id)),data=json.dumps(model), headers=AHA_HEADER)
+    return rs
 
 
 
+#Sync all the features for the MasterFeature 
+def syncStoriesFromZenToAha(zenhubEpicId, ahaEpic):
+    ahaEpicId = ahaEpic['id']
+    issues = getAllIssuesForEpic(zenhubEpicId)
+
+    for issue in issues:
+
+        try:
+            githubIssue = git_repo.issue(zenhubEpicId)
+            response = createStoryInAha(issue, zenhubEpicId, ahaEpicId)
+        except Exception as identifier:
+            exceptionHandler("Exception when syncing stories for epic {0}".format(ahaEpic['name']))
+       

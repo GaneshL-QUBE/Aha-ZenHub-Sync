@@ -1,0 +1,648 @@
+2019-10-30 11:53:03,896 [INFO]: app.py(main:36) >> Configuration loaded : {
+    "Zenhub_Domain":"https://api.zenhub.io",
+    "Aha_Domain":"https://qubecinema.aha.io",
+    "Zenhub_repo_Id":"142958202",
+    "product_id":"6621690727465297561",
+    "product_ref":"QW",
+    "repo_name":"Realimage/qube-wire",
+    "ndurance_key":"f952df70-3102-46ab-88c2-d3e383a5eeae",
+    "update_release_dates": false,
+    "Track_due_date": true,
+    "Owner":"dhanya@qubecinema.com",
+    "features_source_of_release_date": "github",
+    "AHA_TOKEN":"Bearer 6c7f49bcd92d85d1117bf865db88242ee7089a37f6bee4dc306dca0885ca1c3c",
+    "ZENHUB_TOKEN":"25378e820ad70873a56b03674c5d609070938926b61cb6cf5bcfcf322c71e325887d0f0a988c29c4",
+    "GITHUB_TOKEN":"5b64fc908c0c11f1eb03c9083b71543724b2eb3e",
+    "Endurance_Source":"https://endurance-qube.herokuapp.com/api/data_store/aha_zen_qubewire",
+    "slack_channel":"UL883UDND",
+    "Endurance_Source_3":"https://endurance-qube.herokuapp.com/api/data_store/aha_zen_qubewire_1",
+    "purgeEntries": true,
+    "ahaReleaseTheme": "<p><a href='https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/reports/release?release={0}'>ZenhubLink</a></p>",
+    "ahaEpicLink":"<p><a href='https://app.zenhub.com/workspaces/qube-wire-5b5fddaf99e4fb625b6974ce/issues/realimage/qube-wire/{0}'>Zenhub_Link</a></p>",
+    "default_pipeline_id": "5cd9373451ea4a02378d71c3",
+    "workspace_id":"5b5fddaf99e4fb625b6974ce"
+}
+2019-10-30 11:53:03,916 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:53:04,194 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/reports/releases HTTP/1.1" 200 14898
+2019-10-30 11:53:04,221 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.github.com:443
+2019-10-30 11:53:05,137 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.github.com:443 "GET /repos/Realimage/qube-wire HTTP/1.1" 200 None
+2019-10-30 11:53:05,138 [DEBUG]: Requester.py(__log:480) >> GET https://api.github.com/repos/Realimage/qube-wire {'Authorization': 'token (oauth token removed)', 'User-Agent': 'PyGithub/Python'} None ==> 200 {'date': 'Wed, 30 Oct 2019 06:23:05 GMT', 'content-type': 'application/json; charset=utf-8', 'transfer-encoding': 'chunked', 'server': 'GitHub.com', 'status': '200 OK', 'x-ratelimit-limit': '5000', 'x-ratelimit-remaining': '4990', 'x-ratelimit-reset': '1572420091', 'cache-control': 'private, max-age=60, s-maxage=60', 'vary': 'Accept, Authorization, Cookie, X-GitHub-OTP, Accept-Encoding', 'etag': 'W/"54665545fae5d6dc0b6e346dca561647"', 'last-modified': 'Wed, 16 Oct 2019 06:01:56 GMT', 'x-oauth-scopes': 'gist, read:discussion, read:repo_hook, repo, user', 'x-accepted-oauth-scopes': 'repo', 'x-github-media-type': 'github.v3; format=json', 'access-control-expose-headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type', 'access-control-allow-origin': '*', 'strict-transport-security': 'max-age=31536000; includeSubdomains; preload', 'x-frame-options': 'deny', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'referrer-policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'content-security-policy': "default-src 'none'", 'content-encoding': 'gzip', 'x-github-request-id': 'FC1F:AA0A:D35667:FD990E:5DB92C48'} {"id":142958202,"node_id":"MDEwOlJlcG9zaXRvcnkxNDI5NTgyMDI=","name":"qube-wire","full_name":"RealImage/qube-wire","private":true,"owner":{"login":"RealImage","id":3600929,"node_id":"MDEyOk9yZ2FuaXphdGlvbjM2MDA5Mjk=","avatar_url":"https://avatars0.githubusercontent.com/u/3600929?v=4","gravatar_id":"","url":"https://api.github.com/users/RealImage","html_url":"https://github.com/RealImage","followers_url":"https://api.github.com/users/RealImage/followers","following_url":"https://api.github.com/users/RealImage/following{/other_user}","gists_url":"https://api.github.com/users/RealImage/gists{/gist_id}","starred_url":"https://api.github.com/users/RealImage/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/RealImage/subscriptions","organizations_url":"https://api.github.com/users/RealImage/orgs","repos_url":"https://api.github.com/users/RealImage/repos","events_url":"https://api.github.com/users/RealImage/events{/privacy}","received_events_url":"https://api.github.com/users/RealImage/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/RealImage/qube-wire","description":"Qube Wire Home Repository","fork":false,"url":"https://api.github.com/repos/RealImage/qube-wire","forks_url":"https://api.github.com/repos/RealImage/qube-wire/forks","keys_url":"https://api.github.com/repos/RealImage/qube-wire/keys{/key_id}","collaborators_url":"https://api.github.com/repos/RealImage/qube-wire/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/RealImage/qube-wire/teams","hooks_url":"https://api.github.com/repos/RealImage/qube-wire/hooks","issue_events_url":"https://api.github.com/repos/RealImage/qube-wire/issues/events{/number}","events_url":"https://api.github.com/repos/RealImage/qube-wire/events","assignees_url":"https://api.github.com/repos/RealImage/qube-wire/assignees{/user}","branches_url":"https://api.github.com/repos/RealImage/qube-wire/branches{/branch}","tags_url":"https://api.github.com/repos/RealImage/qube-wire/tags","blobs_url":"https://api.github.com/repos/RealImage/qube-wire/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/RealImage/qube-wire/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/RealImage/qube-wire/git/refs{/sha}","trees_url":"https://api.github.com/repos/RealImage/qube-wire/git/trees{/sha}","statuses_url":"https://api.github.com/repos/RealImage/qube-wire/statuses/{sha}","languages_url":"https://api.github.com/repos/RealImage/qube-wire/languages","stargazers_url":"https://api.github.com/repos/RealImage/qube-wire/stargazers","contributors_url":"https://api.github.com/repos/RealImage/qube-wire/contributors","subscribers_url":"https://api.github.com/repos/RealImage/qube-wire/subscribers","subscription_url":"https://api.github.com/repos/RealImage/qube-wire/subscription","commits_url":"https://api.github.com/repos/RealImage/qube-wire/commits{/sha}","git_commits_url":"https://api.github.com/repos/RealImage/qube-wire/git/commits{/sha}","comments_url":"https://api.github.com/repos/RealImage/qube-wire/comments{/number}","issue_comment_url":"https://api.github.com/repos/RealImage/qube-wire/issues/comments{/number}","contents_url":"https://api.github.com/repos/RealImage/qube-wire/contents/{+path}","compare_url":"https://api.github.com/repos/RealImage/qube-wire/compare/{base}...{head}","merges_url":"https://api.github.com/repos/RealImage/qube-wire/merges","archive_url":"https://api.github.com/repos/RealImage/qube-wire/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/RealImage/qube-wire/downloads","issues_url":"https://api.github.com/repos/RealImage/qube-wire/issues{/number}","pulls_url":"https://api.github.com/repos/RealImage/qube-wire/pulls{/number}","milestones_url":"https://api.github.com/repos/RealImage/qube-wire/milestones{/number}","notifications_url":"https://api.github.com/repos/RealImage/qube-wire/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/RealImage/qube-wire/labels{/name}","releases_url":"https://api.github.com/repos/RealImage/qube-wire/releases{/id}","deployments_url":"https://api.github.com/repos/RealImage/qube-wire/deployments","created_at":"2018-07-31T03:36:18Z","updated_at":"2019-10-16T06:01:56Z","pushed_at":"2019-10-22T12:23:59Z","git_url":"git://github.com/RealImage/qube-wire.git","ssh_url":"git@github.com:RealImage/qube-wire.git","clone_url":"https://github.com/RealImage/qube-wire.git","svn_url":"https://github.com/RealImage/qube-wire","homepage":"","size":362,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":619,"license":null,"forks":0,"open_issues":619,"watchers":0,"default_branch":"master","permissions":{"admin":false,"push":true,"pull":true},"allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"organization":{"login":"RealImage","id":3600929,"node_id":"MDEyOk9yZ2FuaXphdGlvbjM2MDA5Mjk=","avatar_url":"https://avatars0.githubusercontent.com/u/3600929?v=4","gravatar_id":"","url":"https://api.github.com/users/RealImage","html_url":"https://github.com/RealImage","followers_url":"https://api.github.com/users/RealImage/followers","following_url":"https://api.github.com/users/RealImage/following{/other_user}","gists_url":"https://api.github.com/users/RealImage/gists{/gist_id}","starred_url":"https://api.github.com/users/RealImage/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/RealImage/subscriptions","organizations_url":"https://api.github.com/users/RealImage/orgs","repos_url":"https://api.github.com/users/RealImage/repos","events_url":"https://api.github.com/users/RealImage/events{/privacy}","received_events_url":"https://api.github.com/users/RealImage/received_events","type":"Organization","site_admin":false},"network_count":0,"subscribers_count":21}
+2019-10-30 11:53:05,155 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:06,980 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/releases?page=1 HTTP/1.1" 200 None
+2019-10-30 11:53:06,988 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:08,414 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/releases?page=2 HTTP/1.1" 200 None
+2019-10-30 11:53:08,421 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:10,155 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/releases?page=1 HTTP/1.1" 200 None
+2019-10-30 11:53:10,165 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:11,383 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/releases?page=2 HTTP/1.1" 200 None
+2019-10-30 11:53:11,386 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Server Integration-Duplicate 
+2019-10-30 11:53:11,389 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:12,684 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-318 HTTP/1.1" 200 None
+2019-10-30 11:53:12,690 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Server Integration - Store 
+2019-10-30 11:53:12,693 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:13,978 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-319 HTTP/1.1" 200 None
+2019-10-30 11:53:13,981 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : DCP Remediation R1 
+2019-10-30 11:53:13,985 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:15,272 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-323 HTTP/1.1" 200 None
+2019-10-30 11:53:15,275 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : DCP Email - Release 1 
+2019-10-30 11:53:15,281 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:16,618 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-321 HTTP/1.1" 200 None
+2019-10-30 11:53:16,621 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Capturing IP Address at device level in QWC 
+2019-10-30 11:53:16,627 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:17,900 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-326 HTTP/1.1" 200 None
+2019-10-30 11:53:17,903 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Movie Distribution Status R1 
+2019-10-30 11:53:17,907 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:18,961 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-324 HTTP/1.1" 200 None
+2019-10-30 11:53:18,964 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Combo Pricing 
+2019-10-30 11:53:18,967 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:20,010 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-327 HTTP/1.1" 200 None
+2019-10-30 11:53:20,013 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Tech alerts: KDM Delivery flow 
+2019-10-30 11:53:20,017 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:21,036 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-356 HTTP/1.1" 200 None
+2019-10-30 11:53:21,039 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Partners - UI Tech Debts 
+2019-10-30 11:53:21,042 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:22,056 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-355 HTTP/1.1" 200 None
+2019-10-30 11:53:22,059 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Allow multiple delivery options for a delivery 
+2019-10-30 11:53:22,062 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:23,084 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-325 HTTP/1.1" 200 None
+2019-10-30 11:53:23,087 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Tag a CPL - MVP 
+2019-10-30 11:53:23,091 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:24,158 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-329 HTTP/1.1" 200 None
+2019-10-30 11:53:24,161 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Partners - UI Tech Debt Clean up 
+2019-10-30 11:53:24,165 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:25,277 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-332 HTTP/1.1" 200 None
+2019-10-30 11:53:25,281 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Secure downloads from cloud to appliance 
+2019-10-30 11:53:25,287 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:26,341 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-333 HTTP/1.1" 200 None
+2019-10-30 11:53:26,345 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : View Tags in composition modals 
+2019-10-30 11:53:26,352 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:27,565 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-338 HTTP/1.1" 200 None
+2019-10-30 11:53:27,567 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Appliance manager sunset 
+2019-10-30 11:53:27,571 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:28,628 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-346 HTTP/1.1" 200 None
+2019-10-30 11:53:28,631 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : SSL for content download to appliance - MVP 
+2019-10-30 11:53:28,635 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:29,766 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-331 HTTP/1.1" 200 None
+2019-10-30 11:53:29,770 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Use Template Manager for existing emails in Distributors portal 
+2019-10-30 11:53:29,773 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:31,030 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-360 HTTP/1.1" 200 None
+2019-10-30 11:53:31,033 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : APM instrumentation Pilot 
+2019-10-30 11:53:31,036 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:32,238 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-359 HTTP/1.1" 200 None
+2019-10-30 11:53:32,242 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : SSL for content download to appliance - V2 
+2019-10-30 11:53:32,245 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:33,453 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-348 HTTP/1.1" 200 None
+2019-10-30 11:53:33,456 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Monitoring 
+2019-10-30 11:53:33,460 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:34,575 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-339 HTTP/1.1" 200 None
+2019-10-30 11:53:34,578 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Hard Drive Deliveries 
+2019-10-30 11:53:34,582 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:36,065 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-340 HTTP/1.1" 200 None
+2019-10-30 11:53:36,069 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : WireTAP deliveries 
+2019-10-30 11:53:36,072 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:37,210 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-341 HTTP/1.1" 200 None
+2019-10-30 11:53:37,213 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Finance reports 
+2019-10-30 11:53:37,216 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:38,417 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-342 HTTP/1.1" 200 None
+2019-10-30 11:53:38,420 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Third-party Delivery systems integration 
+2019-10-30 11:53:38,424 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:39,531 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-345 HTTP/1.1" 200 None
+2019-10-30 11:53:39,535 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Operational reports 
+2019-10-30 11:53:39,538 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:40,670 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-349 HTTP/1.1" 200 None
+2019-10-30 11:53:40,674 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Server Integration - KDM Ingestion 
+2019-10-30 11:53:40,677 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:41,974 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-328 HTTP/1.1" 200 None
+2019-10-30 11:53:41,977 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Changes to Christie and Dolby certificate processing 
+2019-10-30 11:53:41,980 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:43,268 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-357 HTTP/1.1" 200 None
+2019-10-30 11:53:43,271 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Changes to support reporting on accounts 
+2019-10-30 11:53:43,275 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:44,410 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-358 HTTP/1.1" 200 None
+2019-10-30 11:53:44,413 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : DCP Remediation 
+2019-10-30 11:53:44,416 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:45,791 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-320 HTTP/1.1" 200 None
+2019-10-30 11:53:45,793 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Server Integration - DCP Ingest 
+2019-10-30 11:53:45,797 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:46,992 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-330 HTTP/1.1" 200 None
+2019-10-30 11:53:46,995 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Manage device mapping history 
+2019-10-30 11:53:46,999 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:48,454 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-354 HTTP/1.1" 200 None
+2019-10-30 11:53:48,457 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Enable rogue appliance to be cut-off from QW 
+2019-10-30 11:53:48,461 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:49,794 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-334 HTTP/1.1" 200 None
+2019-10-30 11:53:49,798 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Booking flow - mobile access 
+2019-10-30 11:53:49,802 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:51,081 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-336 HTTP/1.1" 200 None
+2019-10-30 11:53:51,085 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Decouple content availability in appliance from Booking 
+2019-10-30 11:53:51,088 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:52,549 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-343 HTTP/1.1" 200 None
+2019-10-30 11:53:52,552 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Admin: Ability for support team to initiate a content download to one or more appliances 
+2019-10-30 11:53:52,556 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:53,834 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-344 HTTP/1.1" 200 None
+2019-10-30 11:53:53,838 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Slate Integration 
+2019-10-30 11:53:53,841 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:54,832 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-351 HTTP/1.1" 200 None
+2019-10-30 11:53:54,835 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Cinemas 
+2019-10-30 11:53:54,838 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:56,094 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-353 HTTP/1.1" 200 None
+2019-10-30 11:53:56,098 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Yet to be planned 
+2019-10-30 11:53:56,101 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:57,350 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-335 HTTP/1.1" 200 None
+2019-10-30 11:53:57,353 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : API integration to create Bookings on QW 
+2019-10-30 11:53:57,357 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:58,639 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-337 HTTP/1.1" 200 None
+2019-10-30 11:53:58,643 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : KDM Delivery 
+2019-10-30 11:53:58,647 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:53:59,831 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-347 HTTP/1.1" 200 None
+2019-10-30 11:53:59,834 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Allow exhibitor admin to restrict permissions to users 
+2019-10-30 11:53:59,837 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:00,972 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-352 HTTP/1.1" 200 None
+2019-10-30 11:54:00,976 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Satellite delivery 
+2019-10-30 11:54:00,979 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:02,137 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-350 HTTP/1.1" 200 None
+2019-10-30 11:54:02,140 [INFO]: Aha_connector.py(__processReleasesFromAha:45) >> Loading Release : Parking Lot 
+2019-10-30 11:54:02,144 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:03,365 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/releases/QW-R-1 HTTP/1.1" 200 None
+2019-10-30 11:54:03,372 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:04,445 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/master_features?page=1 HTTP/1.1" 200 None
+2019-10-30 11:54:04,452 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:05,696 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/products/6621690727465297561/master_features?page=2 HTTP/1.1" 200 None
+2019-10-30 11:54:05,700 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Delivery Remediation
+2019-10-30 11:54:05,703 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:06,931 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-726 HTTP/1.1" 200 None
+2019-10-30 11:54:06,935 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: Support multiple delivery options
+2019-10-30 11:54:06,938 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:08,791 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-727 HTTP/1.1" 200 None
+2019-10-30 11:54:08,797 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Partners: Handle DCP remediation
+2019-10-30 11:54:08,800 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:10,005 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-728 HTTP/1.1" 200 None
+2019-10-30 11:54:10,011 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: Handle DCP remediation
+2019-10-30 11:54:10,015 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:11,262 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-729 HTTP/1.1" 200 None
+2019-10-30 11:54:11,265 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Remediate a DCP delivery
+2019-10-30 11:54:11,268 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:12,344 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-730 HTTP/1.1" 200 None
+2019-10-30 11:54:12,347 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Delivery Remediation - R1
+2019-10-30 11:54:12,350 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:13,515 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-731 HTTP/1.1" 200 None
+2019-10-30 11:54:13,518 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributor: Support multiple delivery options
+2019-10-30 11:54:13,522 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:14,668 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-732 HTTP/1.1" 200 None
+2019-10-30 11:54:14,673 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Handle multiple delivery options in Admin pages and reports 
+2019-10-30 11:54:14,677 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:15,846 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-733 HTTP/1.1" 200 None
+2019-10-30 11:54:15,850 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: Support multiple delivery options
+2019-10-30 11:54:15,854 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:17,108 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-734 HTTP/1.1" 200 None
+2019-10-30 11:54:17,111 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Store: Doremi server integration: KDM Ingest
+2019-10-30 11:54:17,114 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:18,418 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-735 HTTP/1.1" 200 None
+2019-10-30 11:54:18,422 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: Show KDM ingest status to exhibitor and support team
+2019-10-30 11:54:18,425 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:19,468 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-736 HTTP/1.1" 200 None
+2019-10-30 11:54:19,471 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: View KDM status across Theatres at summary level
+2019-10-30 11:54:19,474 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:20,767 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-737 HTTP/1.1" 200 None
+2019-10-30 11:54:20,771 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Store: Doremi server integration: DCP Ingest
+2019-10-30 11:54:20,776 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:21,966 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-738 HTTP/1.1" 200 None
+2019-10-30 11:54:21,969 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Cinemas: Configure auto-ingest setting for screens
+2019-10-30 11:54:21,973 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:23,269 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-739 HTTP/1.1" 200 None
+2019-10-30 11:54:23,272 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Inbox: Show DCP ingest status to Exhibitor
+2019-10-30 11:54:23,276 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:24,451 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-740 HTTP/1.1" 200 None
+2019-10-30 11:54:24,454 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: SSL for P2P downloads - V1- MVP 
+2019-10-30 11:54:24,458 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:25,675 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-741 HTTP/1.1" 200 None
+2019-10-30 11:54:25,678 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Partners: UI: Tech debts
+2019-10-30 11:54:25,681 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:26,927 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-742 HTTP/1.1" 200 None
+2019-10-30 11:54:26,931 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: SSL support for P2P communication
+2019-10-30 11:54:26,934 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:28,132 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-743 HTTP/1.1" 200 None
+2019-10-30 11:54:28,135 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: Make the Theatres page accessible on mobile 
+2019-10-30 11:54:28,139 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:29,278 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-744 HTTP/1.1" 200 None
+2019-10-30 11:54:29,282 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: Mobile access: Booking summary and confirmation pages
+2019-10-30 11:54:29,285 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:30,325 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-745 HTTP/1.1" 200 None
+2019-10-30 11:54:30,328 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: Mobile access: KDM Booking page 
+2019-10-30 11:54:30,332 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:31,630 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-746 HTTP/1.1" 200 None
+2019-10-30 11:54:31,634 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: Mobile access: DCP Booking page
+2019-10-30 11:54:31,637 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:32,978 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-747 HTTP/1.1" 200 None
+2019-10-30 11:54:32,981 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: API: Create bookings and view status: approvals flow
+2019-10-30 11:54:32,985 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:34,151 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-749 HTTP/1.1" 200 None
+2019-10-30 11:54:34,155 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: API: Create bookings and view status: Approve quote
+2019-10-30 11:54:34,158 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:35,432 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-750 HTTP/1.1" 200 None
+2019-10-30 11:54:35,436 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: API: Create bookings and view status: Auto-approval mode
+2019-10-30 11:54:35,439 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:36,638 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-751 HTTP/1.1" 200 None
+2019-10-30 11:54:36,642 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: View tags in Composition modal in relevant pages 
+2019-10-30 11:54:36,646 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:37,859 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-752 HTTP/1.1" 200 None
+2019-10-30 11:54:37,862 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: View tags in Composition modal
+2019-10-30 11:54:37,865 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:39,062 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-753 HTTP/1.1" 200 None
+2019-10-30 11:54:39,066 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Hard Drive Delivery: Ability to track whether or not a booking has been billed/paid for 
+2019-10-30 11:54:39,069 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:40,168 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-754 HTTP/1.1" 200 None
+2019-10-30 11:54:40,172 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Use qs-gateway to retrieve the download and duplication status
+2019-10-30 11:54:40,175 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:41,498 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-755 HTTP/1.1" 200 None
+2019-10-30 11:54:41,501 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Distributors: Use qs-gateway to retrieve the download and duplication status for a Festival company
+2019-10-30 11:54:41,505 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:42,674 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-756 HTTP/1.1" 200 None
+2019-10-30 11:54:42,678 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: SSL for P2P downloads MVP - V2
+2019-10-30 11:54:42,681 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:43,942 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-757 HTTP/1.1" 200 None
+2019-10-30 11:54:43,945 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Movie based report
+2019-10-30 11:54:43,948 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:45,286 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-758 HTTP/1.1" 200 None
+2019-10-30 11:54:45,290 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Satellite delivery: Enable multicast transmission and reception in WireTAP
+2019-10-30 11:54:45,293 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:46,594 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-759 HTTP/1.1" 200 None
+2019-10-30 11:54:46,597 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Cinemas: Let admin restrict Theatre access permissions to a user
+2019-10-30 11:54:46,601 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:47,799 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-760 HTTP/1.1" 200 None
+2019-10-30 11:54:47,803 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Cinemas: Let admin restrict Theatre access permissions to a user
+2019-10-30 11:54:47,806 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:48,919 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-761 HTTP/1.1" 200 None
+2019-10-30 11:54:48,922 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Cinemas: Manage and publish device history 
+2019-10-30 11:54:48,926 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:49,991 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-762 HTTP/1.1" 200 None
+2019-10-30 11:54:49,995 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Exhibitors: Process CAT745 and CAT862 model certificates 
+2019-10-30 11:54:49,998 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:51,327 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-763 HTTP/1.1" 200 None
+2019-10-30 11:54:51,330 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Cinemas: Handle Christie F-IMB certificates 
+2019-10-30 11:54:51,333 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:52,637 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-764 HTTP/1.1" 200 None
+2019-10-30 11:54:52,640 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Companies: Display account summary
+2019-10-30 11:54:52,644 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:53,828 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-765 HTTP/1.1" 200 None
+2019-10-30 11:54:53,831 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Admin: Reports: Add Overdue and invoice date in DCP and KDM pricing reports
+2019-10-30 11:54:53,834 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:54,930 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-766 HTTP/1.1" 200 None
+2019-10-30 11:54:54,934 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Integrating APM instrumentation for Inbox for better engineering monitoring
+2019-10-30 11:54:54,937 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:56,193 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-767 HTTP/1.1" 200 None
+2019-10-30 11:54:56,196 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Integrating APM instrumentation for qs-gateway for better engineering monitoring
+2019-10-30 11:54:56,200 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:57,427 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-768 HTTP/1.1" 200 None
+2019-10-30 11:54:57,430 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Support for Template Manager
+2019-10-30 11:54:57,433 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:58,645 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-769 HTTP/1.1" 200 None
+2019-10-30 11:54:58,649 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Email Processor
+2019-10-30 11:54:58,653 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:54:59,901 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-770 HTTP/1.1" 200 None
+2019-10-30 11:54:59,904 [INFO]: Aha_connector.py(__processEpicsFromAha:181) >> Loading Epic: Use Template Manager to send approval emails
+2019-10-30 11:54:59,907 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:01,178 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "GET /api/v1/master_features/QW-E-771 HTTP/1.1" 200 None
+2019-10-30 11:55:01,184 [INFO]: app.py(main:47) >> --------------Before the Sync starts: -------------------------
+2019-10-30 11:55:01,184 [INFO]: app.py(main:48) >> No. of Releases in Aha: 43
+2019-10-30 11:55:01,185 [INFO]: app.py(main:49) >> No. of UnReleased Releases in Aha 14
+2019-10-30 11:55:01,185 [INFO]: app.py(main:50) >> No. of Releases in Zenhub: 48
+2019-10-30 11:55:01,185 [INFO]: app.py(main:51) >> No. of Unmapped Releases 0
+2019-10-30 11:55:01,185 [INFO]: app.py(main:52) >> No. of Epics in Ahaq 45
+2019-10-30 11:55:01,188 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:02,420 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6748366746968734941 HTTP/1.1" 200 None
+2019-10-30 11:55:02,424 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Use Template Manager for existing emails in Distributors portal
+2019-10-30 11:55:02,430 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:03,722 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6747994479832420507 HTTP/1.1" 200 None
+2019-10-30 11:55:03,726 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: APM instrumentation Pilot
+2019-10-30 11:55:03,730 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:05,258 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740153610270709934 HTTP/1.1" 200 None
+2019-10-30 11:55:05,263 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: SSL for content download to appliance - V2
+2019-10-30 11:55:05,267 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:06,690 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740152526507492457 HTTP/1.1" 200 None
+2019-10-30 11:55:06,693 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Server Integration - KDM Ingestion
+2019-10-30 11:55:06,698 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:08,329 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740154118973059524 HTTP/1.1" 200 None
+2019-10-30 11:55:08,334 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Changes to Christie and Dolby certificate processing
+2019-10-30 11:55:08,339 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:09,985 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740154170261559294 HTTP/1.1" 200 None
+2019-10-30 11:55:09,991 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Changes to support reporting on accounts
+2019-10-30 11:55:09,994 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:11,230 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740151826086344121 HTTP/1.1" 200 None
+2019-10-30 11:55:11,233 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: DCP Remediation
+2019-10-30 11:55:11,237 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:12,439 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740152638154823097 HTTP/1.1" 200 None
+2019-10-30 11:55:12,442 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Server Integration - DCP Ingest
+2019-10-30 11:55:12,447 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:13,754 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740153955874411315 HTTP/1.1" 200 None
+2019-10-30 11:55:13,758 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Manage device mapping history
+2019-10-30 11:55:13,763 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:14,914 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740152875225498786 HTTP/1.1" 200 None
+2019-10-30 11:55:14,917 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Enable rogue appliance to be cut-off from QW
+2019-10-30 11:55:14,921 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:16,138 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740152975978867855 HTTP/1.1" 200 None
+2019-10-30 11:55:16,142 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Booking flow - mobile access
+2019-10-30 11:55:16,147 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:17,352 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740153022380067904 HTTP/1.1" 200 None
+2019-10-30 11:55:17,356 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: API integration to create Bookings on QW
+2019-10-30 11:55:17,359 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:18,457 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740153843134873804 HTTP/1.1" 200 None
+2019-10-30 11:55:18,460 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Allow exhibitor admin to restrict permissions to users
+2019-10-30 11:55:18,465 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:19,814 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/releases/6740153734443515789 HTTP/1.1" 200 None
+2019-10-30 11:55:19,817 [INFO]: app.py(CreateOrUpdateReleaseData:100) >> Updated the following Release successfully: Satellite delivery
+2019-10-30 11:55:19,817 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 3 epics for the release : Use Template Manager for existing emails in Distributors portal
+2019-10-30 11:55:19,820 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:20,410 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1896 HTTP/1.1" 200 264
+2019-10-30 11:55:20,414 [ERROR]: Aha_connector.py(__getTranslationData:243) >> The requested translation data 'Wish List' is not found on the map
+2019-10-30 11:55:20,418 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:21,545 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6748367125011902157 HTTP/1.1" 400 None
+2019-10-30 11:55:21,548 [ERROR]: Aha_connector.py(updateAhaEpic:232) >> Error when updating zenhub status for aha Epic 6748367125011902157 : <Response [400]>
+2019-10-30 11:55:21,552 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:21,920 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5da705008a648e0001d5cd3f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:21,923 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5da705008a648e0001d5cd3f and epic 1896
+2019-10-30 11:55:21,924 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Support for Template Manager
+2019-10-30 11:55:21,927 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:22,458 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1893 HTTP/1.1" 200 32
+2019-10-30 11:55:22,461 [ERROR]: Aha_connector.py(updateAhaEpic:235) >> Error updating Zenhub status for Zenhub issue {'plus_ones': [], 'is_epic': False, 'id': '1893'}
+2019-10-30 11:55:22,465 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:22,867 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5da705008a648e0001d5cd3f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:22,870 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5da705008a648e0001d5cd3f and epic 1893
+2019-10-30 11:55:22,870 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Email Processor
+2019-10-30 11:55:22,875 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:23,277 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1899 HTTP/1.1" 200 274
+2019-10-30 11:55:23,284 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:24,507 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6748367361957917915 HTTP/1.1" 200 None
+2019-10-30 11:55:24,511 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6748367361957917915
+2019-10-30 11:55:24,516 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:24,871 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5da705008a648e0001d5cd3f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:24,873 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5da705008a648e0001d5cd3f and epic 1899
+2019-10-30 11:55:24,874 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Use Template Manager to send approval emails
+2019-10-30 11:55:24,874 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 2 epics for the release : APM instrumentation Pilot
+2019-10-30 11:55:24,877 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:25,325 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1900 HTTP/1.1" 200 272
+2019-10-30 11:55:25,332 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:27,886 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6747994571653100293 HTTP/1.1" 200 None
+2019-10-30 11:55:27,891 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6747994571653100293
+2019-10-30 11:55:27,895 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:28,252 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5da6df3cba8f410001570606/issues HTTP/1.1" 200 25
+2019-10-30 11:55:28,254 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5da6df3cba8f410001570606 and epic 1900
+2019-10-30 11:55:28,254 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Integrating APM instrumentation for Inbox for better engineering monitoring
+2019-10-30 11:55:28,257 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:28,704 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1901 HTTP/1.1" 200 272
+2019-10-30 11:55:28,711 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:30,855 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6747994632694422488 HTTP/1.1" 200 None
+2019-10-30 11:55:30,859 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6747994632694422488
+2019-10-30 11:55:30,862 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:31,227 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5da6df3cba8f410001570606/issues HTTP/1.1" 200 25
+2019-10-30 11:55:31,230 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5da6df3cba8f410001570606 and epic 1901
+2019-10-30 11:55:31,230 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Integrating APM instrumentation for qs-gateway for better engineering monitoring
+2019-10-30 11:55:31,231 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 1 epics for the release : SSL for content download to appliance - V2
+2019-10-30 11:55:31,234 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:31,555 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1719 HTTP/1.1" 200 31
+2019-10-30 11:55:31,558 [ERROR]: Aha_connector.py(updateAhaEpic:235) >> Error updating Zenhub status for Zenhub issue {'plus_ones': [], 'is_epic': True, 'id': '1719'}
+2019-10-30 11:55:31,562 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:31,914 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d6f55069e4bb602b965e93f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:31,918 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d6f55069e4bb602b965e93f and epic 1719
+2019-10-30 11:55:31,918 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub SSL for P2P downloads MVP - V2
+2019-10-30 11:55:31,919 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 3 epics for the release : Server Integration - KDM Ingestion
+2019-10-30 11:55:31,923 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:32,240 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1030 HTTP/1.1" 200 278
+2019-10-30 11:55:32,247 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:33,391 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154526701949661 HTTP/1.1" 200 None
+2019-10-30 11:55:33,396 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154526701949661
+2019-10-30 11:55:33,401 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:33,749 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d3545e11b8d6657c7ffd400/issues HTTP/1.1" 200 25
+2019-10-30 11:55:33,752 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d3545e11b8d6657c7ffd400 and epic 1030
+2019-10-30 11:55:33,752 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Store: Doremi server integration: KDM Ingest
+2019-10-30 11:55:33,767 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:34,121 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1680 HTTP/1.1" 200 272
+2019-10-30 11:55:34,128 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:35,363 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154549114837177 HTTP/1.1" 200 None
+2019-10-30 11:55:35,367 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154549114837177
+2019-10-30 11:55:35,371 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:35,928 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d3545e11b8d6657c7ffd400/issues HTTP/1.1" 200 25
+2019-10-30 11:55:35,931 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d3545e11b8d6657c7ffd400 and epic 1680
+2019-10-30 11:55:35,931 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Inbox: Show KDM ingest status to exhibitor and support team
+2019-10-30 11:55:35,935 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:36,283 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1780 HTTP/1.1" 200 31
+2019-10-30 11:55:36,286 [ERROR]: Aha_connector.py(updateAhaEpic:235) >> Error updating Zenhub status for Zenhub issue {'plus_ones': [], 'is_epic': True, 'id': '1780'}
+2019-10-30 11:55:36,290 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:36,691 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d3545e11b8d6657c7ffd400/issues HTTP/1.1" 200 25
+2019-10-30 11:55:36,694 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d3545e11b8d6657c7ffd400 and epic 1780
+2019-10-30 11:55:36,695 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Inbox: View KDM status across Theatres at summary level
+2019-10-30 11:55:36,695 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 2 epics for the release : Changes to Christie and Dolby certificate processing
+2019-10-30 11:55:36,698 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:37,264 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1772 HTTP/1.1" 200 274
+2019-10-30 11:55:37,271 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:38,351 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155225475560770 HTTP/1.1" 200 None
+2019-10-30 11:55:38,355 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155225475560770
+2019-10-30 11:55:38,360 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:38,710 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d88d16909acc20001fc689f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:38,715 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d88d16909acc20001fc689f and epic 1772
+2019-10-30 11:55:38,715 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Exhibitors: Process CAT745 and CAT862 model certificates 
+2019-10-30 11:55:38,719 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:39,182 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1777 HTTP/1.1" 200 272
+2019-10-30 11:55:39,189 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:40,392 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155235807065338 HTTP/1.1" 200 None
+2019-10-30 11:55:40,395 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155235807065338
+2019-10-30 11:55:40,399 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:40,764 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d88d16909acc20001fc689f/issues HTTP/1.1" 200 25
+2019-10-30 11:55:40,767 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d88d16909acc20001fc689f and epic 1777
+2019-10-30 11:55:40,767 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Cinemas: Handle Christie F-IMB certificates 
+2019-10-30 11:55:40,767 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 2 epics for the release : Changes to support reporting on accounts
+2019-10-30 11:55:40,771 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:41,197 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1771 HTTP/1.1" 200 289
+2019-10-30 11:55:41,205 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:42,436 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155251698445966 HTTP/1.1" 200 None
+2019-10-30 11:55:42,441 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155251698445966
+2019-10-30 11:55:42,445 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:42,814 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d88d19eae87b600015053ec/issues HTTP/1.1" 200 25
+2019-10-30 11:55:42,816 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d88d19eae87b600015053ec and epic 1771
+2019-10-30 11:55:42,817 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Admin: Companies: Display account summary
+2019-10-30 11:55:42,820 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:43,246 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1806 HTTP/1.1" 200 264
+2019-10-30 11:55:43,253 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:44,581 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155262007879126 HTTP/1.1" 200 None
+2019-10-30 11:55:44,585 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155262007879126
+2019-10-30 11:55:44,589 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:44,956 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d88d19eae87b600015053ec/issues HTTP/1.1" 200 25
+2019-10-30 11:55:44,959 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d88d19eae87b600015053ec and epic 1806
+2019-10-30 11:55:44,959 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Admin: Reports: Add Overdue and invoice date in DCP and KDM pricing reports
+2019-10-30 11:55:44,960 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 5 epics for the release : DCP Remediation
+2019-10-30 11:55:44,963 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:45,396 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/255 HTTP/1.1" 200 272
+2019-10-30 11:55:45,403 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:46,830 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154284203116475 HTTP/1.1" 200 None
+2019-10-30 11:55:46,834 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154284203116475
+2019-10-30 11:55:46,839 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:47,170 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5ca2e6bcedfb176fe39fa396/issues HTTP/1.1" 200 25
+2019-10-30 11:55:47,173 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5ca2e6bcedfb176fe39fa396 and epic 255
+2019-10-30 11:55:47,174 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Delivery Remediation
+2019-10-30 11:55:47,177 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:47,600 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1670 HTTP/1.1" 200 260
+2019-10-30 11:55:47,606 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:48,756 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154311376976525 HTTP/1.1" 200 None
+2019-10-30 11:55:48,759 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154311376976525
+2019-10-30 11:55:48,762 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:49,115 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5ca2e6bcedfb176fe39fa396/issues HTTP/1.1" 200 25
+2019-10-30 11:55:49,118 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5ca2e6bcedfb176fe39fa396 and epic 1670
+2019-10-30 11:55:49,118 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Inbox: Support multiple delivery options
+2019-10-30 11:55:49,121 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:49,492 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1674 HTTP/1.1" 200 274
+2019-10-30 11:55:49,499 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:50,721 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154323037731690 HTTP/1.1" 200 None
+2019-10-30 11:55:50,725 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154323037731690
+2019-10-30 11:55:50,728 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:51,065 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5ca2e6bcedfb176fe39fa396/issues HTTP/1.1" 200 25
+2019-10-30 11:55:51,068 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5ca2e6bcedfb176fe39fa396 and epic 1674
+2019-10-30 11:55:51,068 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Partners: Handle DCP remediation
+2019-10-30 11:55:51,072 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:51,438 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1675 HTTP/1.1" 200 274
+2019-10-30 11:55:51,444 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:52,769 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154333320007008 HTTP/1.1" 200 None
+2019-10-30 11:55:52,773 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154333320007008
+2019-10-30 11:55:52,776 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:53,112 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5ca2e6bcedfb176fe39fa396/issues HTTP/1.1" 200 25
+2019-10-30 11:55:53,115 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5ca2e6bcedfb176fe39fa396 and epic 1675
+2019-10-30 11:55:53,115 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Inbox: Handle DCP remediation
+2019-10-30 11:55:53,119 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:53,588 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1676 HTTP/1.1" 200 274
+2019-10-30 11:55:53,595 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:54,957 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154346830316116 HTTP/1.1" 200 None
+2019-10-30 11:55:54,960 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154346830316116
+2019-10-30 11:55:54,963 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:55,315 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5ca2e6bcedfb176fe39fa396/issues HTTP/1.1" 200 25
+2019-10-30 11:55:55,318 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5ca2e6bcedfb176fe39fa396 and epic 1676
+2019-10-30 11:55:55,319 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Admin: Remediate a DCP delivery
+2019-10-30 11:55:55,319 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 3 epics for the release : Server Integration - DCP Ingest
+2019-10-30 11:55:55,322 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:55,738 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1639 HTTP/1.1" 200 270
+2019-10-30 11:55:55,745 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:57,071 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154668335611864 HTTP/1.1" 200 None
+2019-10-30 11:55:57,076 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154668335611864
+2019-10-30 11:55:57,084 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:57,492 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5bbd5172bea600017b0ee5/issues HTTP/1.1" 200 25
+2019-10-30 11:55:57,495 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5bbd5172bea600017b0ee5 and epic 1639
+2019-10-30 11:55:57,496 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Store: Doremi server integration: DCP Ingest
+2019-10-30 11:55:57,499 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:55:57,888 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1684 HTTP/1.1" 200 304
+2019-10-30 11:55:57,894 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:55:59,623 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154678559472735 HTTP/1.1" 200 None
+2019-10-30 11:55:59,627 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154678559472735
+2019-10-30 11:55:59,636 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:01,370 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5bbd5172bea600017b0ee5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:01,373 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5bbd5172bea600017b0ee5 and epic 1684
+2019-10-30 11:56:01,373 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Cinemas: Configure auto-ingest setting for screens
+2019-10-30 11:56:01,377 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:01,781 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1685 HTTP/1.1" 200 270
+2019-10-30 11:56:01,787 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:03,414 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154695482540865 HTTP/1.1" 200 None
+2019-10-30 11:56:03,419 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154695482540865
+2019-10-30 11:56:03,427 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:03,820 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5bbd5172bea600017b0ee5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:03,823 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5bbd5172bea600017b0ee5 and epic 1685
+2019-10-30 11:56:03,823 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Inbox: Show DCP ingest status to Exhibitor
+2019-10-30 11:56:03,823 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 1 epics for the release : Manage device mapping history
+2019-10-30 11:56:03,827 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:04,175 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1659 HTTP/1.1" 200 270
+2019-10-30 11:56:04,182 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:05,468 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155184618793521 HTTP/1.1" 200 None
+2019-10-30 11:56:05,472 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155184618793521
+2019-10-30 11:56:05,476 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:05,863 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d6f8a26485f9b0001d0dc46/issues HTTP/1.1" 200 25
+2019-10-30 11:56:05,866 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d6f8a26485f9b0001d0dc46 and epic 1659
+2019-10-30 11:56:05,866 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Cinemas: Manage and publish device history 
+2019-10-30 11:56:05,866 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 1 epics for the release : Enable rogue appliance to be cut-off from QW
+2019-10-30 11:56:05,869 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:06,287 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1157 HTTP/1.1" 200 270
+2019-10-30 11:56:06,293 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:07,585 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154745048092894 HTTP/1.1" 200 None
+2019-10-30 11:56:07,591 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154745048092894
+2019-10-30 11:56:07,595 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:07,986 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c348c2e6d2400014d940b/issues HTTP/1.1" 200 25
+2019-10-30 11:56:07,992 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c348c2e6d2400014d940b and epic 1157
+2019-10-30 11:56:07,993 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub SSL support for P2P communication
+2019-10-30 11:56:07,993 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 4 epics for the release : Booking flow - mobile access
+2019-10-30 11:56:08,000 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:08,352 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1393 HTTP/1.1" 200 264
+2019-10-30 11:56:08,360 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:09,543 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154773312380500 HTTP/1.1" 200 None
+2019-10-30 11:56:09,546 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154773312380500
+2019-10-30 11:56:09,551 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:09,936 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c3e6b2c54a95f3e1c20d5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:09,939 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c3e6b2c54a95f3e1c20d5 and epic 1393
+2019-10-30 11:56:09,939 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: Make the Theatres page accessible on mobile 
+2019-10-30 11:56:09,942 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:10,280 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1681 HTTP/1.1" 200 304
+2019-10-30 11:56:10,286 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:11,509 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154788947974639 HTTP/1.1" 200 None
+2019-10-30 11:56:11,513 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154788947974639
+2019-10-30 11:56:11,516 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:12,035 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c3e6b2c54a95f3e1c20d5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:12,038 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c3e6b2c54a95f3e1c20d5 and epic 1681
+2019-10-30 11:56:12,039 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: Mobile access: Booking summary and confirmation pages
+2019-10-30 11:56:12,042 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:12,430 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1682 HTTP/1.1" 200 304
+2019-10-30 11:56:12,437 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:14,042 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154807473727766 HTTP/1.1" 200 None
+2019-10-30 11:56:14,045 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154807473727766
+2019-10-30 11:56:14,049 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:14,478 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c3e6b2c54a95f3e1c20d5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:14,481 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c3e6b2c54a95f3e1c20d5 and epic 1682
+2019-10-30 11:56:14,481 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: Mobile access: KDM Booking page 
+2019-10-30 11:56:14,485 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:14,888 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1683 HTTP/1.1" 200 31
+2019-10-30 11:56:14,890 [ERROR]: Aha_connector.py(updateAhaEpic:235) >> Error updating Zenhub status for Zenhub issue {'plus_ones': [], 'is_epic': True, 'id': '1683'}
+2019-10-30 11:56:14,894 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:15,504 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c3e6b2c54a95f3e1c20d5/issues HTTP/1.1" 200 25
+2019-10-30 11:56:15,507 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c3e6b2c54a95f3e1c20d5 and epic 1683
+2019-10-30 11:56:15,507 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: Mobile access: DCP Booking page
+2019-10-30 11:56:15,507 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 3 epics for the release : API integration to create Bookings on QW
+2019-10-30 11:56:15,511 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:15,911 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1734 HTTP/1.1" 200 304
+2019-10-30 11:56:15,919 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:17,347 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154850180457945 HTTP/1.1" 200 None
+2019-10-30 11:56:17,351 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154850180457945
+2019-10-30 11:56:17,356 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:17,765 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c41b62c54a95f3e1c20eb/issues HTTP/1.1" 200 25
+2019-10-30 11:56:17,767 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c41b62c54a95f3e1c20eb and epic 1734
+2019-10-30 11:56:17,768 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: API: Create bookings and view status: approvals flow
+2019-10-30 11:56:17,771 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:19,997 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1735 HTTP/1.1" 200 304
+2019-10-30 11:56:20,004 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:21,342 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154866059012366 HTTP/1.1" 200 None
+2019-10-30 11:56:21,345 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154866059012366
+2019-10-30 11:56:21,349 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:21,852 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c41b62c54a95f3e1c20eb/issues HTTP/1.1" 200 25
+2019-10-30 11:56:21,855 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c41b62c54a95f3e1c20eb and epic 1735
+2019-10-30 11:56:21,855 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: API: Create bookings and view status: Approve quote
+2019-10-30 11:56:21,859 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:22,568 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1736 HTTP/1.1" 200 270
+2019-10-30 11:56:22,575 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:23,701 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740154876931402859 HTTP/1.1" 200 None
+2019-10-30 11:56:23,704 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740154876931402859
+2019-10-30 11:56:23,708 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:24,055 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d5c41b62c54a95f3e1c20eb/issues HTTP/1.1" 200 25
+2019-10-30 11:56:24,058 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d5c41b62c54a95f3e1c20eb and epic 1736
+2019-10-30 11:56:24,058 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Distributors: API: Create bookings and view status: Auto-approval mode
+2019-10-30 11:56:24,059 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 1 epics for the release : Allow exhibitor admin to restrict permissions to users
+2019-10-30 11:56:24,062 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:24,411 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/1729 HTTP/1.1" 200 260
+2019-10-30 11:56:24,416 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:25,797 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155109976311446 HTTP/1.1" 200 None
+2019-10-30 11:56:25,802 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155109976311446
+2019-10-30 11:56:25,807 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:26,151 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d6f854d85723e0001062ba0/issues HTTP/1.1" 200 25
+2019-10-30 11:56:26,154 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d6f854d85723e0001062ba0 and epic 1729
+2019-10-30 11:56:26,154 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Cinemas: Let admin restrict Theatre access permissions to a user
+2019-10-30 11:56:26,155 [INFO]: app.py(CreateOrUpdateEpicsData:113) >> Syncing 1 epics for the release : Satellite delivery
+2019-10-30 11:56:26,163 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:26,510 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "GET /p1/repositories/142958202/issues/2 HTTP/1.1" 200 270
+2019-10-30 11:56:26,517 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): qubecinema.aha.io:443
+2019-10-30 11:56:27,894 [DEBUG]: connectionpool.py(_make_request:396) >> https://qubecinema.aha.io:443 "PUT /api/v1/master_features/6740155096731106794 HTTP/1.1" 200 None
+2019-10-30 11:56:27,898 [INFO]: Aha_connector.py(updateAhaEpic:230) >> Successfully updated status for epic 6740155096731106794
+2019-10-30 11:56:27,903 [DEBUG]: connectionpool.py(_new_conn:815) >> Starting new HTTPS connection (1): api.zenhub.io:443
+2019-10-30 11:56:28,247 [DEBUG]: connectionpool.py(_make_request:396) >> https://api.zenhub.io:443 "PATCH /p1/reports/release/5d6f64a2485f9b0001d0db9c/issues HTTP/1.1" 200 25
+2019-10-30 11:56:28,250 [INFO]: zenhub_connector.py(updateZenhubEpicAndRelease:102) >> Successfully linked release 5d6f64a2485f9b0001d0db9c and epic 2
+2019-10-30 11:56:28,251 [INFO]: app.py(CreateOrUpdateEpicsData:130) >> Successfully updated epic in aha from zenhub Satellite delivery: Enable multicast transmission and reception in WireTAP

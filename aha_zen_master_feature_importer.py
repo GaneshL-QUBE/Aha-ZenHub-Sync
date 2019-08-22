@@ -8,11 +8,9 @@ from autologging import logged,traced,TRACE
 import logging
 import sys
 from datetime import datetime
-config= json.loads(os.environ.get('config'))
-config=Objectifier(config)
+from configuration import getConfiguration
 from urllib.parse import urljoin
 import time
-import releases
 
 
 logging.basicConfig(level=logging.INFO,
@@ -20,6 +18,7 @@ logging.basicConfig(level=logging.INFO,
   handlers=[logging.StreamHandler()])
 logger=logging.getLogger()
 
+config = getConfiguration()
 
 
 AHA_TOKEN=config.AHA_TOKEN
@@ -53,10 +52,9 @@ def build_Release_Map_ZH():
     ZH_Releases= releases.getReleasesFromZenhub(config.Zenhub_repo_Id)
     Issue_Release_Map={}
     for rl in ZH_Releases:
-        print("Getting issues under release" +str(rl))
         issues=get_issues_under_releaseID_ZH(rl['release_id'])
-
         if issues is None:
+            logger.info("No issues found under release:" +rl['title'])
             continue
 
         for issue in issues:
@@ -91,6 +89,7 @@ def github_object(TOKEN,repository):
     repo= gh.repository(owner,name)
     return repo
 
+
 #Get Details of an issue from Zenhub
 def getIssueDetailFromZen(repoid,issue_id):
     rs= requests.get(url= urljoin(config.Zenhub_Domain,'/p1/repositories/{0}/issues/{1}'.format(str(repoid),str(issue_id))),headers=ZENHUB_HEADER)
@@ -103,27 +102,6 @@ def getIssueDetailFromZen(repoid,issue_id):
         print ("Error getting zenhub issue or id:"+str(issue_id) +" from repoid: "+str(repoid))
         return None
 
-# Get list of available release milestones from Aha
-def getAllReleasesfromAha():
-    current_page=1
-    totalpage=10
-    releases={}
-    while current_page<=totalpage:
-        time.sleep(.25)
-        rs=requests.get(url= urljoin(config.Aha_Domain,'/api/v1/products/{0}/releases'.format(config.product_ref)),params={'page':current_page},headers=AHA_HEADER)
-        if(rs.status_code==200):
-            data=rs.json()
-            for items in data['releases']:
-                releases[items['name']]=items
-            totalpage=data['pagination']['total_pages']
-            current_page=current_page+1
-        elif(rs.status_code==429):
-            logger.error('hit Rate Limit while getting release details. Sleeping 10 secs')
-            time.sleep(10)
-        else:
-            logger.error('Non 200 status code while getting release details from Aha')
-            break
-    return releases
 
 def getEpicDataGit():
     pass
@@ -182,19 +160,41 @@ def getMasterFeatureDetailAha(id):
         #TODO: Log Failure Error for incorrect response
         return None
 
+
+def getEpicsFromAha(page=1):
+    data=[]
+    url = urljoin(config.Aha_Domain, '/api/v1/products/{product_id}/master_features'.format(product_id=config.product_id))
+    rs= requests.get(url, headers=AHA_HEADER,params={"page":page})
+    if(rs.status_code==200):
+        data += rs.json()['master_features']
+        currentpage=rs.json()['pagination']['current_page']
+        total_pages=rs.json()['pagination']['total_pages']
+        if(total_pages>currentpage):
+            data["releases"]=data["releases"]+getReleasesfromAha(page=currentpage+1)['releases']
+    else:
+        return None
+    return data
+
 #Main workflow
 def main():
+
+
+
+
+    return 
     final_Changes=[]
-    Aha_releases= getAllReleasesfromAha()
+    Aha_releases= releases.Releases_in_Aha
     global RELEASES_AHA
     RELEASES_AHA=Aha_releases
+
     Zen_Epics=getListOfEpicsZen()
     git_repo=github_object(GITHUB_TOKEN,config.repo_name)
     global ZH_ISSUE_RELEASE_MAP
     ZH_ISSUE_RELEASE_MAP=build_Release_Map_ZH()
 
     translationJSON = json.load(open('zen2ahaMap.json'))
-    print("Translation JSON" + str(translationJSON))
+    logger.info("Translation JSON:" + str(translationJSON))
+
 
     for items in Zen_Epics['epic_issues']:
         #check if item is available in Endurance:
