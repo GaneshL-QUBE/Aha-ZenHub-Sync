@@ -6,9 +6,6 @@ from objectifier import Objectifier
 import logging
 import release_templates
 
-config= json.loads(os.environ.get('config'))
-config=Objectifier(config)
-
 AHA_TOKEN=config.AHA_TOKEN
 ZENHUB_TOKEN=config.ZENHUB_TOKEN
 AHA_HEADER={'Authorization':AHA_TOKEN,'Content-Type': "application/json","User-Agent":"praveentechnic@gmail.com"}
@@ -147,49 +144,47 @@ def add_Release_Templates(response):
 
 
 
-def main():
-    endurance=requests.get(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}).json()
-    if(endurance is None):
-        raise Exception
-    else:
-        pass
-    
+def main(config_selector):
+    config= json.loads(os.environ.get(config_selector))
+    os.environ['config']= os.environ.get(config_selector)
+    print("Configuration loaded: " +os.environ['config'])
+    config=Objectifier(config)
+
     Releases_in_Zenhub=getReleasesFromZenhub(config.Zenhub_repo_Id)
     Releases_in_Aha = getReleasesfromAha()
+
+    aha_releases_names = []
+    for release in Releases_in_Aha:
+        aha_releases_names.append(release['name'])
     
+    print("Releases in Zenhub"+str(Releases_in_Zenhub))
+    print("Releases in Aha"+str(Releases_in_Aha))
+
     try:
         endurance = None
         for release in Releases_in_Zenhub:
-            if(endurance is None): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
-                release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
-                status=release['state']
-                if(status=='open'):
-                    status='Backlog'
-                if(status=='closed'):
-                    status='Released'
-                creation=createReleaseOnAha(name=release['title'], release_date = release_date_to_be_updated_to_AHA, workflow_status=status)
-                if('state' not in creation.keys()):
-                    add_Release_Templates(creation)
-                    logger.info("Created new Release on Aha! {0}".format(creation['release']['reference_num']))
-                    endurance[release['release_id']]={"aha_ref_num":creation['release']['reference_num'], "aha_release_id": creation['release']['id']}
-                else:
-                    logger.error("Error while Creating Release on Aha! : {0}".format(str(creation)))
+            if(release["name"] not in aha_releases_names): #Data is not available in endurance, So we are creating a new release , 2 Level Check 
+                print("Zenhub release not found in Aha:" + release["name"])
+                continue
+                # release_date_to_be_updated_to_AHA= release['desired_end_date'].split('T')[0]
+                # status=release['state']
+                # if(status=='open'):
+                #     status='Backlog'
+                # if(status=='closed'):
+                #     status='Released'
+                # creation=createReleaseOnAha(name=release['title'], release_date = release_date_to_be_updated_to_AHA, workflow_status=status)
+                # if('state' not in creation.keys()):
+                #     add_Release_Templates(creation)
+                #     print("Created new Release on Aha! {0}".format(creation['release']['reference_num']))
+                #     endurance[release['release_id']]={"aha_ref_num":creation['release']['reference_num'], "aha_release_id": creation['release']['id']}
+                # else:
+                #     print("Error while Creating Release on Aha! : {0}".format(str(creation)))
                 
             else:# data is available, so we will check for updates
-                aha_releaseId=endurance[release['release_id']]['aha_release_id']
+                print("Zenhub release found in Aha:" + release["name"])
 
-                single_Aha_Release= getAhaReleasebyId(aha_releaseId)
-                single_ZH_Release= getZHReleasebyID(Releases_in_Zenhub, release['release_id'])
-                diff= generatediff(single_ZH_Release, single_Aha_Release)
-                if(diff != {"name":None, "release_date":None , "workflow_status":None}):
-                    updation= updateReleaseOnAha(id=aha_releaseId, name= diff['name'], release_date= diff['release_date'] , workflow_status= diff['workflow_status'])                                
-
-                    if('state' not in updation.keys()):
-                        logger.info("Updated Release On Aha {0}".format(str(updation)))
-                    else:
-                        logger.error("Error while updating a release on Aha : {0}".format(str(updation)))
     except Exception as e:
-        print(str(e))
+        print("Exception Occurred here:"+str(e))
     finally:
         print("Finished syncing releases")
         #requests.post(config.Endurance_Source_3, headers={'x-api-key':config.ndurance_key}, json= endurance)
