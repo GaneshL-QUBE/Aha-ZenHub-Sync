@@ -12,6 +12,8 @@ from datetime import datetime
 import github3
 from urllib.parse import urljoin
 import releases
+from objectifier import Objectifier
+from configuration import getConfiguration
 
 logging.basicConfig(level=logging.INFO,
  format="%(levelname)s:%(filename)s,%(lineno)d:%(name)s.%(funcName)s:%(message)s", 
@@ -19,8 +21,7 @@ logging.basicConfig(level=logging.INFO,
 logger=logging.getLogger()
 
 
-config= json.loads(os.environ.get('config'))
-config=Objectifier(config)
+config = getConfiguration()
 
 
 AHA_TOKEN=config.AHA_TOKEN
@@ -159,7 +160,7 @@ def buildEpicStoryMap(repoid):
                     issue_epic_map[str(issues['issue_number'])]=items['issue_number']
     return issue_epic_map
 
-EPIC_MAP=buildEpicStoryMap(config.Zenhub_repo_Id)
+#EPIC_MAP=buildEpicStoryMap(config.Zenhub_repo_Id)
 
 #Compare status and generate diff 
 def generatediff(Aha_feature,Zen_issue, Git_issue=None , repo_id=None):

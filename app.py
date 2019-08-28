@@ -8,6 +8,7 @@ import requests
 import releases
 import aha_zen_adapter
 import aha_zen_master_feature_importer
+import configuration
 
 def upload_to_storage(data):
     domain = "https://qubewire-aha-integration.herokuapp.com"
@@ -21,8 +22,11 @@ def upload_to_storage(data):
 
 def main():
     config_selector= sys.argv[1]
-    config= json.loads(os.environ.get(config_selector))
-    os.environ['config']= os.environ.get(config_selector)
+    config = os.environ.get(config_selector)
+    if config is None:
+        config = configuration.global_configuration
+    config= json.loads(config)
+    os.environ['config']= str(config)
     print("Configuration loaded: " +os.environ['config'])
     config=Objectifier(config)
     
@@ -32,8 +36,8 @@ def main():
     #feature_update=aha_zen_adapter.main()
     #slack_sender.send_message('Features Sync happened @ '+str(datetime.now())+ ' logs @ ' +upload_to_storage(feature_update), config.slack_channel)
     
-    #master_feature_update=aha_zen_master_feature_importer.main()
-    #slack_sender.send_message('Master Features Sync happened @ '+str(datetime.now())+ ' logs @ ' +upload_to_storage(master_feature_update), config.slack_channel)
+    master_feature_update=aha_zen_master_feature_importer.main()
+    slack_sender.send_message('Master Features Sync happened @ '+str(datetime.now())+ ' logs @ ' +upload_to_storage(master_feature_update), config.slack_channel)
 
 if __name__ == "__main__":
     main()
