@@ -213,7 +213,7 @@ def getIssueDetailFromZen(issue_id):
         return result
     else:
         #Log error
-        print ("Error getting zenhub issue or id:"+str(issue_id) +" from repoid: "+str(repoid))
+        logger.error("Error getting zenhub issue or id:{0}".format(issue_id))
         return None
 
 def getAllMasterFeaturesFromAha(page=1):
