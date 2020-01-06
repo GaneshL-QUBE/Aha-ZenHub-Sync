@@ -38,8 +38,11 @@ def main():
     Zenhub = zenhub_connector.ZenhubConnector(config)
     Aha = Aha_connector.AhaConnector(config)
 
- 
-
+    #data = Zenhub.github.get_issue(1777)
+    #issue = Zenhub.github.get_issues()
+    #logger.info("Data got for issue is {0}".format(data.is_closed))
+    #raise NotImplementedError
+    
     mapAhaZenhubReleases(Aha, Zenhub)
     #mapAhaZenhubEpics(Aha, Zenhub)
   
@@ -100,7 +103,8 @@ def CreateOrUpdateReleaseData(Aha, Zenhub):
             logger.info("Updated the following Release successfully: {0}".format(ahaRelease["name"]))
         else: 
             #Mapping not found. Create a release in Zenhub
-            zenhubReleaseId = Zenhub.createNewRelease(ahaRelease)
+            zenhubRelease = Zenhub.createNewRelease(ahaRelease)
+            zenhubReleaseId = zenhubRelease["release_id"]
             Aha.updateAhaReleaseTheme(ahaReleaseId, zenhubReleaseId)
             logger.info("Successfully created a new Release in Zenhub for Aha release {0}".format(ahaRelease["name"]))
 

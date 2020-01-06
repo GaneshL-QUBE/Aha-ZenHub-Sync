@@ -117,6 +117,8 @@ class AhaConnector:
         else:
             logger.error("Error Updating Aha Theme : {0} For AhaId: {1}".format(rs, ahaId))
 
+        self.addReleaseToMap(ahaId, zenhubId)
+
 
     def updateAhaRelease(self, ahaId, zenhubData):
         url=urljoin(self.config.Aha_Domain,'/api/v1/releases/{ahaId}'.format(ahaId = ahaId))
@@ -276,5 +278,7 @@ class AhaConnector:
             
         return epicsMap
 
-    
+    def addReleaseToMap(self, ahaReleaseId, zenhubReleaseId):
+        self.mappedAhaZenhubReleases[ahaReleaseId] = zenhubReleaseId
+        self.mappedZenhubAhaReleases[zenhubReleaseId] = ahaReleaseId
     

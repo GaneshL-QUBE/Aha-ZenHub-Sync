@@ -1,5 +1,6 @@
 from urllib.parse import urljoin
 from github import Github
+#import github3
 import requests
 import logging
 
@@ -44,6 +45,7 @@ class ZenhubConnector:
         }
         rs = requests.post(url = url, json=data, headers=self.ZENHUB_HEADER)
         if (rs.status_code == 200):
+            logger.info("json data: {0}".format(rs.json))
             return rs.json()
         else:
             logger.error("Error in creating the release in Zenhub for ahaRelease {0}".format(data["title"]))
@@ -65,6 +67,7 @@ class ZenhubConnector:
 
     def __initializeGit(self):
         return Github(self.config.GITHUB_TOKEN).get_repo(self.config.repo_name)
+        #return github3.login(self.config.GITHUB_TOKEN).repository()
 
     def createZenhubEpic(self, title, details, zenhubReleaseId):
         issue = self.github.create_issue(title=title, body=details, labels=["Epic"])
